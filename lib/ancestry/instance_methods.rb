@@ -211,7 +211,7 @@ module Ancestry
 
     def child_conditions
       t = get_arel_table
-      t[get_ancestry_column].eq(child_ancestry)
+      t[get_ancestry_column].eq(child_ancestry).or(t[get_ancestry_column].matches("#{child_ancestry},%")).or(t[get_ancestry_column].matches("%,#{child_ancestry}"))
     end
 
     def children

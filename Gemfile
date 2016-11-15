@@ -11,5 +11,3 @@ group :development do
 end
  
 gem 'sqlite3'
-  
- 
